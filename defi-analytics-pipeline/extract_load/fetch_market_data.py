@@ -12,7 +12,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def fetch_market_data(coin_id: str = "ethereum", currency: str = "usd", days: int = 7, max_retries: int = 3) -> dict:
-    """Fetches historical market data from API with retry logic for rate limits."""
     url = f"https://api.coingecko.com/api/v3/coins/CG-2GwBoDyKGFHywJ2gaSdtrNd7/market_chart"
     params = {
         "vs_currency": currency,
