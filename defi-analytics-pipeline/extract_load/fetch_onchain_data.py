@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # We look for .env in the root directory (one level up from extract_load/)
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env_path = os.path.join(project_root, '.env')
-load_dotenv(dotenv_path=env_path)
+load_dotenv(dotenv_path=env_path, override=True)
 
 def connect_to_node() -> Web3:
     """Establishes connection to the Ethereum node via RPC."""
