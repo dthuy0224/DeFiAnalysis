@@ -36,7 +36,7 @@ def connect_to_node() -> Web3:
     logger.info(f"Successfully connected to Ethereum Node. Client version: {w3.client_version}")
     return w3
 
-def extract_block_data(w3: Web3, num_blocks: int = 100) -> list:
+def extract_block_data(w3: Web3, num_blocks: int = 10000) -> list:
     """Extracts on-chain data for the latest N blocks."""
     latest_block_number = w3.eth.block_number
     logger.info(f"Latest block number: {latest_block_number}")
@@ -109,7 +109,7 @@ def main():
         w3 = connect_to_node()
         
         # 2. Extract
-        blocks_data = extract_block_data(w3, num_blocks=100)
+        blocks_data = extract_block_data(w3, num_blocks=10000)
         
         # 3. Save
         save_to_csv(blocks_data, "ethereum_onchain_data.csv")

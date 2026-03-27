@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: defi_raw
+    description: "Raw data loaded from GCS for our Web3 DeFi analytics pipeline"
+    database: defianalysis  # Replace with actual project ID if different
+    schema: defi_raw
+    tables:
+      - name: raw_market_data
+        description: "Daily price and volume data fetched from CoinGecko"
+      - name: raw_onchain_data
+        description: "Latest Ethereum block data fetched from RPC"

@@ -1,0 +1,12 @@
+dbt_transform:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: ../../secrets/gcp-service-account.json
+      project: defianalysis
+      dataset: defi_analytics
+      threads: 4
+      timeout_seconds: 300
+      location: US 
